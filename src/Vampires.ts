@@ -41,7 +41,7 @@ export const VAMPIRES: Vampire[] = [
     // },
     {
         name: "Twilight",
-        culturalOrigin: "United States",
+        culturalOrigin: "US",
         timePeriod: "2008",
         summary: "twilight vampires",
         description: {
@@ -59,7 +59,7 @@ export const VAMPIRES: Vampire[] = [
     },
     {
         name: "The Originals",
-        culturalOrigin: "United States",
+        culturalOrigin: "US",
         timePeriod: timePeriodToString([2011, 2018]),
         summary: `
             Popularized through the fantasy TV show, "The Originals", the story follows the family of the first and most powerful vampires, created over a millennum ago through a magical ritual. With unparalleled power, they are bound by family but cursed for eternity with a thirst for blood and a constant threat to their existence.

@@ -1,4 +1,3 @@
-import { useEffect } from "react"
 import { Vampire } from "../Vampires"
 
 type Props = {
@@ -8,9 +7,6 @@ type Props = {
 
 export default function CardArticle({ vampire, closeCardArticleCallback }: Props) {
 
-	useEffect(() => {
-		window.scrollTo(0,0)
-	}, [])
 
   return (
     <section className="vampire-article">

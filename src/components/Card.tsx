@@ -15,11 +15,8 @@ export default function Card({vampire, index, openCardArticleCallback}: Props) {
         <img src={vampire.images[0]} alt=""/>
       </div>
       <div className="card-content">
+        <div className="card-subheader">{vampire.culturalOrigin}, {vampire.timePeriod}</div>
         <h2 className="card-header">{vampire.name}</h2>
-        <div className="card-subheader">{vampire.culturalOrigin} &mdash; {vampire.timePeriod}</div>
-        <p className="card-summary">
-          {vampire.summary}
-        </p>
         <button onClick={openCardArticleCallback} className="read_more-btn">Read More...</button>
       </div>
       {
