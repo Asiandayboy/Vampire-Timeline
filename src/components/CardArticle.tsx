@@ -137,6 +137,24 @@ export default function CardArticle({ vampire, closeCardArticleCallback }: Props
 
 			</section>
 
+			<span className="section-divider"></span>
+
+			<section className="sources-section">
+				<h2>Sources</h2>
+				<ul>
+					{
+						Object.entries(vampire.sources!).map(([citation, src], i) => (
+							<li>
+								<h3>[{i+1}] {citation}</h3>
+								<div>
+									<a href={src}>{src}</a>
+								</div>
+							</li>
+						))
+					}
+				</ul>
+			</section>
+
 			{/* <span className="section-divider"></span>
 
 			<section className="abilities_and_weaknesses">

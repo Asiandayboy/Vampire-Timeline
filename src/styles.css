@@ -265,7 +265,6 @@ h3 {
         }
     }
 
-
     & .abilities-section {
         & >section {
             margin-bottom: 3em;
@@ -334,6 +333,31 @@ h3 {
         }
     }
 
+    & .sources-section {
+        & ul {
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 2em;
+
+            & li {
+                word-wrap: break-word;
+
+                & h3 {
+                    margin: .5em 0;
+                    font-weight: 500;
+                }
+
+                & div {
+                    padding-left: 2em;
+                }
+
+                & a {
+                    color: rgb(116, 160, 192);
+                }
+            }
+        }
+    }
 
     
     & .abilities_and_weaknesses {
