@@ -36,9 +36,9 @@ export default function Timeline({ cards }: Props) {
       scrollTrigger: {
         trigger: timelineWrapper.current,
         start: "top 46%",
-        end: "bottom-=5% 57.5%",
+        end: "bottom-=10% 57.5%",
         scrub: 1,
-        // markers: true,
+        markers: true,
       },
     })
 

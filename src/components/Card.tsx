@@ -12,7 +12,7 @@ export default function Card({vampire, index, openCardArticleCallback}: Props) {
   return (
     <section className={`timeline-card vampire-card ${index % 2 == 0 && "left-container" || "right-container"}`}>
       <div className="card-img-wrapper">
-        <img src={vampire.images[0]} alt=""/>
+        <img src={vampire.thumbnail} alt=""/>
       </div>
       <div className="card-content">
         <div className="card-subheader">{vampire.culturalOrigin}, {vampire.timePeriod}</div>
