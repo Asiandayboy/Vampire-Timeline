@@ -15,7 +15,7 @@
 }
 
 :root {
-    --bg-color: #151515;
+    --bg-color: #181818;
     --fg-color: rgb(210, 210, 210);
     --fg-color-1: rgb(195, 195, 195);
     --fg-color-2: rgb(230, 230, 230);
@@ -35,6 +35,7 @@ body {
     background-color: var(--bg-color);
     color: var(--fg-color);
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow-x: hidden;
 }
 
 
@@ -70,20 +71,27 @@ h3 {
     } */
 }
 
+.desc-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+}
+
 
 
 .vampire-card {
     --card-width: min(500px, 100%);
-    /* border: 1px solid rgb(118, 118, 118); */
     box-shadow: 0 0 30px 10px rgb(7, 7, 7);
-    border-radius: 10px;
     width: var(--card-width);
+    border-radius: 10px;
 
 
 
     & .card-img-wrapper {
         overflow: hidden;
         position: relative;
+        height: 200px;
+        /* border: 1px solid tomato; */
 
         & img {
             width: 100%;
@@ -214,19 +222,6 @@ h3 {
         display: block;
     }
 
-    & .origin_desc-wrapper {
-        display: flex;
-        flex-direction: column;
-        gap: 2em;
-
-
-        & .origin_desc-subsection {
-            display: flex;
-            flex-direction: column;
-            /* align-items: center; */
-        }
-    }
-
     & .appearance-section {
 
         & .appearance_desc-subsection {
@@ -266,8 +261,12 @@ h3 {
     }
 
     & .abilities-section {
-        & >section {
-            margin-bottom: 3em;
+        /* & section {
+            border: 1px solid tomato;
+        } */
+
+        & section:nth-child(3) {
+            margin-block-start: 10rem;
         }
 
         & >section>div {
@@ -344,7 +343,7 @@ h3 {
                 word-wrap: break-word;
 
                 & h3 {
-                    margin: .5em 0;
+                    margin: 0em 0;
                     font-weight: 500;
                 }
 
@@ -359,7 +358,6 @@ h3 {
         }
     }
 
-    
     & .abilities_and_weaknesses {
         /* border: 1px solid tomato; */
         display: flex;
@@ -382,6 +380,7 @@ h3 {
 
         }
     }
+
 }
 
 
@@ -479,7 +478,6 @@ h3 {
     aspect-ratio: 21/13;
     opacity: 1;
 
-    border-radius: 20px;
 
     display: grid;
     place-items: center;

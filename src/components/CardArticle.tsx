@@ -18,16 +18,23 @@ export default function CardArticle({ vampire, closeCardArticleCallback }: Props
 			
 			<section className="origin-section">
 				<h2>Origin</h2>
-				<p>
-					{vampire.description.originExplanation}
-				</p>
 
-				<div className="origin_desc-wrapper">
+				<div className="desc-wrapper">
 				{
 					vampire.description.originDescription?.map((desc) => (
-						<div className="origin_desc-subsection">
+						<div key={desc.heading} className="desc-subsection">
 							<h3>{desc.heading}</h3>
-							<p>{desc.description}</p>
+							{
+								Array.isArray(desc.description) &&
+								<div>
+									{
+										desc.description.map((descText) => (
+											<p>{descText}</p>
+										))
+									}
+								</div> ||
+								<p>{desc.description}</p>
+							}
 						</div>
 					))
 				}
@@ -41,7 +48,7 @@ export default function CardArticle({ vampire, closeCardArticleCallback }: Props
 
 				{
 					vampire.description.appearanceDescription?.map((desc) => (
-						<div className="appearance_desc-subsection">
+						<div key={desc.heading} className="appearance_desc-subsection">
 							{
 								desc?.heading && <h3>{desc.heading}</h3>
 							}
@@ -78,8 +85,8 @@ export default function CardArticle({ vampire, closeCardArticleCallback }: Props
 					<div>
 						{
 							vampire.description.abilitiesDescription?.map((desc) => (
-								<div className="ability-item">
-									<div className="ability-info">
+								<div key={desc.heading} className="ability-item">
+									<div className={`ability-info ${!desc.img && "no_img-info"}`}>
 										<h4>{desc.heading}</h4>
 										<p>{desc.description}</p>
 									</div>
@@ -107,16 +114,17 @@ export default function CardArticle({ vampire, closeCardArticleCallback }: Props
 
 				<section>
 					<h3>Weaknesses</h3>
+					<div>
 					{
 						vampire.description.weaknessesDescription?.map((desc) => (
-							<div className="ability-item">
+							<div key={desc.heading} className="ability-item">
 								<div className={`ability-info ${!desc.img && "no_img-info"}`}>
 									<h4>{desc.heading}</h4>
 									<p>{desc.description}</p>
 								</div>
 								{
 									desc.img &&
-									<div className="image">
+									<div className="image ability-img">
 										<div className="img-wrapper">
 											<img src={desc.img.src} alt="" />
 										</div>
@@ -133,7 +141,27 @@ export default function CardArticle({ vampire, closeCardArticleCallback }: Props
 							</div>
 						))
 					}
+					</div>
 				</section>
+
+			</section>
+
+			<span className="section-divider"></span>
+
+			<section className="culture-section">
+				<h2>Cultural Significance</h2>
+				{vampire.culturalSignificance && vampire.culturalSignificance.length > 0 &&
+					<div className="desc-wrapper">
+						{
+							vampire.culturalSignificance?.map((desc) => (
+								<div key={desc.heading} className="desc-subsection">
+									<h3>{desc.heading}</h3>
+									<p>{desc.description}</p>
+								</div>
+							))
+						}
+					</div>
+				}
 
 			</section>
 
@@ -144,7 +172,7 @@ export default function CardArticle({ vampire, closeCardArticleCallback }: Props
 				<ul>
 					{
 						Object.entries(vampire.sources!).map(([citation, src], i) => (
-							<li>
+							<li key={i}>
 								<h3>[{i+1}] {citation}</h3>
 								<div>
 									<a href={src}>{src}</a>
@@ -155,31 +183,6 @@ export default function CardArticle({ vampire, closeCardArticleCallback }: Props
 				</ul>
 			</section>
 
-			{/* <span className="section-divider"></span>
-
-			<section className="abilities_and_weaknesses">
-				<div className="abilities-wrapper">
-					<h3>Abilities</h3>
-					<ul>
-					{
-						vampire.description.abilities.map((ability) => (
-							<li>{ability}</li>
-						))
-					}
-					</ul>
-				</div>
-
-				<div className="weaknesses-wrapper">
-					<h3>Weaknesses</h3>
-					<ul>
-					{
-						vampire.description.defenseStrategy.map((weakness) => (
-							<li>{weakness}</li>
-						))
-					}
-					</ul>
-				</div>
-			</section> */}
 
     </section>
   )

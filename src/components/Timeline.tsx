@@ -38,7 +38,7 @@ export default function Timeline({ cards }: Props) {
         start: "top 46%",
         end: "bottom-=10% 57.5%",
         scrub: 1,
-        markers: true,
+        // markers: true,
       },
     })
 
