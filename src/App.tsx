@@ -4,6 +4,7 @@ import Card from "./components/Card"
 import "./styles.css"
 import CardArticle from "./components/CardArticle"
 import Timeline from "./components/Timeline"
+import AuthorTag from "./components/AuthorTag"
 
 
 function App() {
@@ -37,7 +38,9 @@ function App() {
               <Card key={i} vampire={v} index={i} openCardArticleCallback={() => openCardArticle(v)}/>
             ))
           } />
-
+          <footer>
+            <AuthorTag />
+          </footer>
         </>
         ||
         <CardArticle vampire={focusedCard!!} closeCardArticleCallback={() => closeCardArticle()}/>

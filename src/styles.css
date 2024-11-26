@@ -44,10 +44,24 @@ header {
     display: grid;
     place-items: center;
 
+
     & .timeline-header {
         text-align: center;
         font-size: 2.5rem;
         color: white;
+    }
+}
+
+footer {
+    background-color: rgb(17, 17, 17);
+    display: grid;
+    place-items: center;
+    height: 100px;
+    
+    & #author {
+        color: var(--subheader-grey);
+        font-style: italic;
+        font-size: 1.1rem;
     }
 }
 
