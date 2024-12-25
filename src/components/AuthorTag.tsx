@@ -1,5 +1,5 @@
 export default function AuthorTag() {
   return (
-    <div id="author">&copy; Phakday Russell, 2024</div>
+    <div id="author">&copy; Asiandayboy, 2024</div>
   )
 }
